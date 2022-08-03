@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>View All Book Records</title>
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+  </head>
+  <body>
+    <div id="header">
+      <h1>Book Record Management</h1>
+      <p>Hello, {{request.session.username}} </p>
+      <div id="nav">
+        <a href="http://localhost:8000/brm/view-books">View Books</a>
+        <a href="http://localhost:8000/brm/new-book">Add New Book</a>
+        <a href="http://localhost:8000/brm/search-book">Search Books</a>
+        <a href="http://localhost:8000/brm/logout/">Logout</a>
+      </div>
+    </div>
+
+    <div id="main">
+      <h2>View All Book Records</h2>
+      <table>
+        <tr>
+          <th>Book Title</th>
+          <th>Author</th>
+          <th>Price</th>
+          <th>Publisher</th>
+          <th></th>
+          <th></th>
+        </tr>
+        {% for book in books %}
+        <tr>
+          <td>{{book.title}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.price}}</td>
+          <td>{{book.publisher}}</td>
+          <td><a href="http://localhost:8000/brm/edit-book?bookid={{book.id}}">Edit</a></td>
+          <td><a href="http://localhost:8000/brm/delete-book?bookid={{book.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

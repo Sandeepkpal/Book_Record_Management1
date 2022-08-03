@@ -1,0 +1,62 @@
+body{
+  background-color: lightgray;
+  padding:0px;
+  margin:0px;
+  font-family:sans-serif;
+}
+#header
+{
+  width:100%;
+  height:auto;
+  background-color:#000020;
+  color:lightgray;
+  padding:20px;
+}
+#header h1
+{
+  text-align:center;
+}
+#header #nav a
+{
+  text-decoration:none;
+  color:lightgray;
+  float:left;
+  width:120px;
+
+}
+#header #nav a:hover
+{
+  color:white;
+}
+#main
+{
+  width:80%;
+  margin:auto;
+  background-color:white;
+  min-height:500px;
+  padding:20px;
+  margin-top:20px;
+  box-shadow: 5px -5px 5px gray;
+}
+#main table
+{
+  width:80%;
+  border:2px Solid #000020;
+}
+#main table th
+{
+  background-color:darkgray;
+}
+#main form
+{
+  width:70%;
+  border:2px Solid #000020;
+  padding:20px;
+}
+#main form input
+{
+  display:block;
+  margin-top:10px;
+  margin-bottom:20px;
+  
+}

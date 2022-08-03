@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Book Record</title>
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+  </head>
+  <body>
+    <div id="header">
+      <h1>Book Record Management</h1>
+      <div id="nav">
+        <a href="http://localhost:8000/brm/view-books">View Books</a>
+        <a href="http://localhost:8000/brm/new-book">Add New Book</a>
+        <a href="http://localhost:8000/brm/search-book">Search Books</a>
+        <a href="http://localhost:8000/brm/logout/">Logout</a>
+      </div>
+    </div>
+
+    <div id="main">
+      <h2>Add New Book Record</h2>
+      <form action="http://localhost:8000/brm/add/" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Save">
+      </form>
+    </div>
+  </body>
+</html>

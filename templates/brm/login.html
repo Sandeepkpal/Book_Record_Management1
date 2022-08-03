@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" >
+  </head>
+  <body>
+    <div id="header">
+      <h1>Book Record Management</h1>
+
+    </div>
+
+    <div id="main">
+      <h2>Login Window</h2>
+      <form method="POST">
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input type="text" name="username" >
+        <label for="password">Password</label>
+        <input type="password" name="password">
+        <input type="submit" value="Signin">
+      </form>
+      <p>{{error}}</p>
+    </div>
+  </body>
+</html>
